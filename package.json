@@ -1,0 +1,25 @@
+{
+  "name": "inventory",
+  "version": "1.0.0",
+  "description": "letter'P inventory system",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aliasosx/inventory.git"
+  },
+  "author": "soulisack SAYYALINH",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aliasosx/inventory/issues"
+  },
+  "homepage": "https://github.com/aliasosx/inventory#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-jwt": "^5.3.1",
+    "mysql": "^2.16.0",
+    "sequelize": "^5.1.0"
+  }
+}

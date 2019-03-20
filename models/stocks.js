@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('stocks', {
     id: {
       type: DataTypes.INTEGER(11),
@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
       autoIncrement: true
     },
     stock_refno: {
-      type: DataTypes.STRING(8),
+      type: DataTypes.STRING(12),
       allowNull: false,
       unique: true
     },
@@ -58,6 +58,6 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     }
   }, {
-    tableName: 'stocks'
-  });
+      tableName: 'stocks'
+    });
 };

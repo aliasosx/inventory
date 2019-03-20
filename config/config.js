@@ -6,5 +6,5 @@ module.exports = {
     JWT_SECRET: process.env.JWT_SECRET || 'secret1',
     MYSQL_USER: process.env.MYSQL_USER || 'root',
     MYSQL_PASS: process.env.MYSQL_PASS || '123',
-    MYSQL_DB: process.env.MYSQL_DB || 'letterp'
+    MYSQL_DB: process.env.MYSQL_DB || 'letterp_inventory'
 }

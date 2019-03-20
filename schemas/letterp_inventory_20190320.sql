@@ -294,7 +294,7 @@ DROP TABLE IF EXISTS `stocks`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `stocks` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `stock_refno` varchar(8) NOT NULL,
+  `stock_refno` varchar(12) NOT NULL,
   `productId` int(11) NOT NULL,
   `previous_quantity` int(11) DEFAULT NULL,
   `used_quantity` int(11) DEFAULT NULL,
@@ -310,7 +310,7 @@ CREATE TABLE `stocks` (
   UNIQUE KEY `stocks_stock_refno_uindex` (`stock_refno`),
   KEY `stocks_user_fk` (`userId`),
   CONSTRAINT `stocks_user_fk` FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -318,6 +318,7 @@ CREATE TABLE `stocks` (
 --
 
 LOCK TABLES `stocks` WRITE;
+INSERT INTO `stocks` (`id`, `stock_refno`, `productId`, `previous_quantity`, `used_quantity`, `current_quantity`, `minimum_quantity`, `remarks`, `userId`, `createdAt`, `updatedAt`) VALUES (8,'000000000522',4,0,0,900,450,'initialize stock',3,'2019-03-20 17:16:56','2019-03-20 17:16:55');
 UNLOCK TABLES;
 
 --
@@ -344,7 +345,7 @@ CREATE TABLE `stocktrackings` (
   KEY `stocktrackings_source_fk` (`sourceId`),
   CONSTRAINT `stocktrackings_source_fk` FOREIGN KEY (`sourceId`) REFERENCES `sources` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `stocktrackings_user_fk` FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -352,6 +353,7 @@ CREATE TABLE `stocktrackings` (
 --
 
 LOCK TABLES `stocktrackings` WRITE;
+INSERT INTO `stocktrackings` (`id`, `stockId`, `sourceId`, `previous_quantity`, `used_quantity`, `current_quantity`, `remarks`, `userId`, `createdAt`, `updatedAt`) VALUES (1,8,3,0,0,900,'Manual add Quantity',3,'2019-03-20 17:16:56','2019-03-20 17:16:56');
 UNLOCK TABLES;
 
 --
@@ -494,4 +496,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-20 16:37:24
+-- Dump completed on 2019-03-20 17:18:00

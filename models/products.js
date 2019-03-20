@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('products', {
     id: {
       type: DataTypes.INTEGER(11),
@@ -22,11 +22,25 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(255),
       allowNull: true
     },
+
+    cost: {
+      type: "DOUBLE",
+      allowNull: false,
+      defaultValue: '0'
+    },
+
     price: {
       type: "DOUBLE",
       allowNull: false,
       defaultValue: '0'
     },
+
+    quantity: {
+      type: DataTypes.INTEGER(11),
+      allowNull: false,
+      defaultValue: '0'
+    },
+
     currencyId: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -77,6 +91,6 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   }, {
-    tableName: 'products'
-  });
+      tableName: 'products'
+    });
 };

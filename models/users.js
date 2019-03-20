@@ -1,6 +1,7 @@
 /* jshint indent: 2 */
+const Sequelize = require('sequelize');
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('users', {
     id: {
       type: DataTypes.INTEGER(11),
@@ -11,7 +12,8 @@ module.exports = function(sequelize, DataTypes) {
     employee_code: {
       type: DataTypes.STRING(36),
       allowNull: false,
-      unique: true
+      unique: true,
+      defaultValue: Sequelize.UUIDV4
     },
     gender: {
       type: DataTypes.CHAR(1),
@@ -75,6 +77,6 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     }
   }, {
-    tableName: 'users'
-  });
+      tableName: 'users'
+    });
 };

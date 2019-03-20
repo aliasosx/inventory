@@ -15,6 +15,8 @@ server.use(jwt({ secret: config.JWT_SECRET }).unless({ path: ['/auth', '/registe
 // Router
 require('./routers/routers')(server);
 require('./routers/users')(server);
+require('./routers/products')(server);
+
 
 server.listen(config.PORT, () => {
     console.log('Server started on port ' + config.PORT);

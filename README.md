@@ -1,3 +1,3 @@
 # inventory
 
-# sequelize-auto -o "./models" -d letterp_inventory -h localhost -u root -p 3306 -x 123 -e mysql
+# sequelize-auto -o "./models" -d inventory -h 139.59.192.33 -u root -p 3306 -x  -e mysql
